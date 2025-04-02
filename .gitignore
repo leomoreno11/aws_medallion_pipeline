@@ -1,0 +1,10 @@
+# Ignore the logs directory
+logs/
+venv/
+
+# Ignore specific file extensions
+*~
+
+# Ignore Docker compose override files
+docker-compose.override.yml
+.env
