@@ -4,7 +4,7 @@ This project implements an end-to-end data pipeline using Airflow to extract dat
 ### **Objective**  
 The goal is to showcase scalable, cloud-native data processing while ensuring data quality through validation checks and automated monitoring.  
 
-![image](https://private-user-images.githubusercontent.com/67594083/430185325-7d420b77-44a7-41ad-8a5f-317fe2fac5f1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3Mjg0MjcsIm5iZiI6MTc0MzcyODEyNywicGF0aCI6Ii82NzU5NDA4My80MzAxODUzMjUtN2Q0MjBiNzctNDRhNy00MWFkLThhNWYtMzE3ZmUyZmFjNWYxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDAwNTUyN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWUxNThjYWQ1Y2Q4OWY2Zjc3N2QxOWExZTQ5NTc3ZWMxNDg2NGEwNmRiMDQzZTAyMzQ1NDU3MDZjMWZkNTRiMzkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.In06qlQnf0R304ckPAsybRgsM-Yfsf8zH1NQV0kGCXM)  
+![image](https://github.com/leomoreno11/leomoreno11/blob/main/materials/project_architecture.png)  
 
 
 ---
@@ -109,7 +109,7 @@ docker-compose up -d
 ## **Running the Pipeline**  
 The Airflow DAG runs **daily at midnight** but can be manually triggered via the UI.  
 
-![image](https://private-user-images.githubusercontent.com/67594083/430185520-cb61aeba-3e99-4c74-bcdc-1e7a9c40d4b2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3Mjg0MjcsIm5iZiI6MTc0MzcyODEyNywicGF0aCI6Ii82NzU5NDA4My80MzAxODU1MjAtY2I2MWFlYmEtM2U5OS00Yzc0LWJjZGMtMWU3YTljNDBkNGIyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDAwNTUyN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFiYmEzNDM2OGMzZTg0ZjljNzY4YWU5N2Y5Zjc5MTg2YjYzYmFlNmMxNTg2YmI5N2U0OWQzYmZkYjFiYTBhMWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.0I6auMK7MJ0bZSbIA0vefF0qLErCpn9P-fIbxCKsxXk) 
+![image](https://github.com/leomoreno11/leomoreno11/blob/main/materials/airflow_dag.png) 
 
 ### **DAG Execution**  
 The primary DAG (`OPEN_BREWERY_DB_DATA_PIPELINE`) automates:  
@@ -119,7 +119,7 @@ The primary DAG (`OPEN_BREWERY_DB_DATA_PIPELINE`) automates:
 
 If any task fails, an automatic Slack notification is triggered for immediate resolution.  
 
-![image](https://private-user-images.githubusercontent.com/67594083/430185510-5e2e2131-cb39-4718-8164-41f8dd435947.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM3Mjg0MjcsIm5iZiI6MTc0MzcyODEyNywicGF0aCI6Ii82NzU5NDA4My80MzAxODU1MTAtNWUyZTIxMzEtY2IzOS00NzE4LTgxNjQtNDFmOGRkNDM1OTQ3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDA0VDAwNTUyN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYxZWY1MjU4YTI3ODY1OTBjYmI2Zjg4MWE0YTY5Mzk0MTY0NTdlNDE0OWM1YTgxOWZiNmFlOGExYzc0NzkyMWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Lf-YG_toS02SdIC8zfOT9q1JCkhB3z1YO6_mrRsgGUg)
+![image](https://github.com/leomoreno11/leomoreno11/blob/main/materials/slack_error_message.png)
 
 ### **Execution Options**  
 - **Scheduled Runs**: The pipeline runs daily at midnight (configurable via cron).  
